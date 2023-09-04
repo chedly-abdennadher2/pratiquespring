@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.model.Student;
 import com.example.demo.service.StudentService;
 import com.example.demo.service.Interface.IStudentService;
-
 @RestController
+
 @RequestMapping ("/student")
 
 public class StudentController extends AbstractController <Student,IStudentService> {
