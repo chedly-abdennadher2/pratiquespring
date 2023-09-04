@@ -12,28 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Student;
 import com.example.demo.service.StudentService;
+import com.example.demo.service.Interface.IStudentService;
 
 @RestController
 @RequestMapping ("/student")
 
-public class StudentController implements AbstractController <Student>{
-@Autowired
-private StudentService service;
-@GetMapping("/all") 
-public List<Student> findAll()
-{return service.findAll();
-}
-@GetMapping("/find/{id}") 
+public class StudentController extends AbstractController <Student,IStudentService> {
 
-public Student findBy(@PathVariable String id)
-{
-	Student student= this.service.findBy(id);
-	return student;
-	
-}
-@PostMapping("/save/") 
-
-public void save(@RequestBody Student student)
-{ this.service.save(student);
-}
 }

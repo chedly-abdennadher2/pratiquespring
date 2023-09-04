@@ -7,25 +7,12 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Student;
 import com.example.demo.repository.StudentRepository;
-import com.example.demo.service.Interface.StudentServiceInterface;
+import com.example.demo.service.Interface.IAbstractService;
+import com.example.demo.service.Interface.IStudentService;
 
 @Service
 
-public class StudentService implements StudentServiceInterface, AbstractService <Student>{
-	@Autowired
-	private StudentRepository repository;
+public class StudentService extends AbstractService<Student,StudentRepository> implements IStudentService {
 
-	@Override
-	public List<Student> findAll() {
-		// TODO Auto-generated method stub
-		return this.repository.findAll();
-	}
-	public Student findBy(String id)
-	{
-	 return this.repository.findById(id).get();
-	}
-	@Override
-	public void save(Student student) {
-	 this.repository.save(student);
-	}
+
 }

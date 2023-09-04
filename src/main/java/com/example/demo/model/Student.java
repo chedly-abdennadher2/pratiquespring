@@ -1,9 +1,10 @@
 package com.example.demo.model;
 
-import java.io.Serializable;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
 
 @Entity
@@ -13,15 +14,15 @@ import lombok.*;
 @Getter(AccessLevel.PUBLIC)
 @Setter(AccessLevel.PUBLIC)
 
-public class Student implements Serializable {
+public class Student extends AbstractModel {
 /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-@Id
-private String id;
+
 
 private String firstName;
 private String lastName;
-
+@ManyToOne (cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+private University university;
 }
