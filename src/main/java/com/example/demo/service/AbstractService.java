@@ -27,7 +27,8 @@ Optional<T> t= this.repository.findById(id);
  {return null;}
 }
 @Override
-public void save(T entity) {
+public T save(T entity) {
  this.repository.save(entity);
+ return entity;
 }
 }

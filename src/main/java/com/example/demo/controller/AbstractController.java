@@ -37,10 +37,10 @@ public T findBy(@PathVariable Long id)
 
 @PostMapping("/save/") 
 
-public void save(@RequestBody T t)
+public T save(@RequestBody T t)
 {
-	this.service.save(t);
-
+T t2	=this.service.save(t);
+return t2;
 }
 
 }
