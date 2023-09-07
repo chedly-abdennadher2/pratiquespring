@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,4 +44,13 @@ T t2	=this.service.save(t);
 return t2;
 }
 
+@DeleteMapping ("/delete/{id}") 
+
+public T delete(@PathVariable Long id)
+{
+	T entity= this.service.findById(id);
+	this.service.delete(entity);
+	return entity;
+
+}
 }

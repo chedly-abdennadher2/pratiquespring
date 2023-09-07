@@ -31,4 +31,9 @@ public T save(T entity) {
  this.repository.save(entity);
  return entity;
 }
+public T delete (T entity)
+{
+	this.repository.delete(entity);
+	return entity;
+}
 }
