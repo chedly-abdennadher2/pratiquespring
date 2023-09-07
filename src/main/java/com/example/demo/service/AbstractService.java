@@ -18,7 +18,7 @@ public List<T> findAll() {
 	// TODO Auto-generated method stub
 	return this.repository.findAll();
 }
-public T findBy(Long id)
+public T findById(Long id)
 {
 Optional<T> t= this.repository.findById(id);
  if (t.isPresent())

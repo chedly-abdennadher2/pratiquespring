@@ -28,9 +28,9 @@ public List<T> findAll()
 }
 @GetMapping("/find/{id}") 
 
-public T findBy(@PathVariable Long id)
+public T findById(@PathVariable Long id)
 {
-	T entity= this.service.findBy(id);
+	T entity= this.service.findById(id);
 	return entity;
 
 }

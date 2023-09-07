@@ -34,7 +34,6 @@ public class PratiquespringApplication {
 
     @Bean
     public WebMvcConfigurer getCorsConfiguration(){
-        System.out.println("ok");
     	return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
@@ -45,18 +44,5 @@ public class PratiquespringApplication {
             }
         };
     }
-/*	@Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.setAllowedHeaders(List.of("Access-Control-Allow-Origin","Authorization","Access-Control","Origin", "Cache-Control", "Content-Type"));
-        corsConfiguration.setAllowedOrigins(List.of("*"));
-        corsConfiguration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PUT","OPTIONS","PATCH", "DELETE"));
-        corsConfiguration.setAllowCredentials(true);
-        corsConfiguration.setExposedHeaders(List.of("Authorization"));
 
-        return http
-                .cors(Customizer.withDefaults())
-                .build();
-    }
-*/
 }

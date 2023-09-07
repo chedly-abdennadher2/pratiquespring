@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface IAbstractService<T> {
 public List<T> findAll();
 public T save(T t);
-public T findBy(@PathVariable Long id);
+public T findById(@PathVariable Long id);
 
 }
