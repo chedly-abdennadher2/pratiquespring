@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -44,6 +45,13 @@ T t2	=this.service.save(t);
 return t2;
 }
 
+@PutMapping("/update/") 
+
+public T update(@RequestBody T t)
+{
+T t2	=this.service.save(t);
+return t2;
+}
 @DeleteMapping ("/delete/{id}") 
 
 public T delete(@PathVariable Long id)
